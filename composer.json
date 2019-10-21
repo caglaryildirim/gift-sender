@@ -1,0 +1,35 @@
+{
+    "name": "caglaryildirim/zynga-gift",
+    "description": "Zynga Game Gift Module",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Caglar Yildirim",
+            "email": "caglaryildirim@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "ext-mbstring": "*",
+        "ext-mysqli": "*",
+        "codeigniter/framework": "^3.1",
+        "predis/predis": "^1.1",
+        "sentry/sdk": "^2.0",
+        "phpunit/phpunit": "^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zynga\\": "./application/classes/"
+        },
+        "exclude-from-classmap": [
+            "application/classes/Test/"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": false
+    }
+}

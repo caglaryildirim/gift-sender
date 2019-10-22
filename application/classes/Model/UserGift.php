@@ -121,7 +121,7 @@ class UserGift
 			" FROM " . self::$tableName . " AS ugq" .
 			" INNER JOIN tblUser AS u ON ugq.fromUserID=u.userID" .
 			" INNER JOIN tblGiftType AS gt ON ugq.giftSendType=gt.gtID" .
-			" WHERE ugq.toUserID=? AND ugq.giftAccepted=? AND gt.gtStatus=1", [$toUserID, 0]);
+			" WHERE ugq.toUserID=? AND ugq.giftAccepted=? AND ugq.giftDate > '%s' AND gt.gtStatus=1", [$toUserID, 0, date("Y-m-d", strtotime("-7 days"))]);
 		return self::GetObjectSet($selectQuery, __CLASS__);
 	}
 // </editor-fold>
